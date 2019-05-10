@@ -25,7 +25,9 @@ namespace FormApplication.DAL.Concrete.EntityFramework
                                  Description = f.Description,
                                  FirstName = u.FirstName,
                                  LastName = u.LastName,
-                                 UserName = u.UserName
+                                 UserName = u.UserName,
+                                 Age = f.Age,
+                                 FormName = f.FormName
                              };
                 return result.ToList();
             } 

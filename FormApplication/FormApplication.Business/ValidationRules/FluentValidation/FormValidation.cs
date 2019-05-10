@@ -19,7 +19,7 @@ namespace FormApplication.Business.ValidationRules.FluentValidation
             RuleFor(p => p.Name).NotEmpty().WithMessage("İsim boş kalamaz");
             RuleFor(p => p.Surname).NotEmpty().WithMessage("Soyisim boş kalamaz");
             RuleFor(p => p.Age);
-            //RuleFor(p => p.ProductName).Must(StartWithA);
+            
         }
 
     }

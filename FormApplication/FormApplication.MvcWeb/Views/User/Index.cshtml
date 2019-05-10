@@ -1,0 +1,87 @@
+﻿@model FormApplication.Entities.Concrete.User
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+
+                    @using (Html.BeginForm("Index", "Form", FormMethod.Post))
+                    {
+                        <div style="max-width: 400px;">
+                            <h2 class="form-signin-heading">
+                                Login
+                            </h2>
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control input_user" })
+                            <div>
+                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "error" })
+                            </div>
+                            <br />
+                            @Html.LabelFor(m => m.UserPassword)
+                            @Html.PasswordFor(m => m.UserPassword, new { @class = "form-control input_pass" })
+                            <div>
+                                @Html.ValidationMessageFor(m => m.UserPassword, "", new { @class = "error" })
+                            </div>
+
+                            <input type="hidden" name="ReturnUrl" value="@Request.QueryString["ReturnUrl"]" />
+                            <input type="submit" value="Submit" class="btn btn-primary" />
+                            <br />
+                            <br />
+                            <div id="dvMessage" style="display:none" class="alert alert-danger">
+                                <strong>Error!</strong>
+                                <span>@ViewBag.Message</span>
+                            </div>
+                        </div>
+                    }
+                    @if (@ViewBag.Message != null)
+                    {
+                        <script type="text/javascript">
+                            $(function () {
+                                $("#dvMessage").show();
+                            });
+                        </script>
+                    }
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-center links">
+                           
+                            <input type="button"
+                                   value=" Don't have an account?"
+                                 onclick="location.href='@Url.Action("Register", "User")'" />
+                           
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

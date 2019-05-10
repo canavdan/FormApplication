@@ -11,7 +11,7 @@ namespace FormApplication.Business.Abstract
     {
         List<User> GetAll();
         User GetById(int id);
-        User Add(User product);
-        User Update(User product);
+        User Add(User user);
+        User Update(User user);
     }
 }

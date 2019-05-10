@@ -18,7 +18,7 @@ namespace FormApplication.Business.ValidationRules.FluentValidation
             RuleFor(p => p.UserMail).NotEmpty().WithMessage("Mail adresi boş kalamaz");
             RuleFor(p => p.FirstName);
             RuleFor(p => p.LastName);
-            //RuleFor(p => p.ProductName).Must(StartWithA);
+            
         }
 
         //Deneme amaçlı

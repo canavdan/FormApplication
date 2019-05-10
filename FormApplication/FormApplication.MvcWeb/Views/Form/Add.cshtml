@@ -1,0 +1,54 @@
+﻿@model FormApplication.MvcWeb.Models.FormAddViewModel
+    @{
+        ViewBag.Title = "Add";
+    }
+
+   
+
+        <body>
+            <form asp-controller="Form" asp-action="Add" method="post">
+                <div class="form-group">
+                    <label asp-for="Form.FormName"></label>
+                    <span asp-validation-for="Form.FormName"></span>
+                    <input required asp-for="Form.FormName" class="form-control" placeholder="Form FormName" />
+                    <span asp-validation-for="Form.FormName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Form.Description"></label>
+                    <span asp-validation-for="Form.Description"></span>
+                    <input asp-for="Form.Description" class="form-control" placeholder="Form Description" />
+                    <span asp-validation-for="Form.Description"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Form.Name"></label>
+                    <span asp-validation-for="Form.Name"></span>
+                    <input required asp-for="Form.Name" class="form-control" placeholder=" Name" />
+                    <span asp-validation-for="Form.Name"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Form.Surname"></label>
+                    <span asp-validation-for="Form.Surname"></span>
+                    <input required asp-for="Form.Surname" class="form-control" placeholder="Surname" />
+                    <span asp-validation-for="Form.Surname"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Form.Age"></label>
+                    <span asp-validation-for="Form.FormName"></span>
+                    <input asp-for="Form.Age" class="form-control" placeholder="Form Age" />
+                    <span asp-validation-for="Form.Age"></span>
+                </div>
+
+
+                <input type="submit" value="Register" class="btn btn-xs btn-success" />
+            </form>
+
+        </body>
+</html>
+
